@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
@@ -19,22 +20,25 @@
 
 <header class="topbar">
   <a class="brand" href="#" data-route="landing" aria-label="فرجان الحركية">
-    <svg class="logo-mark" viewBox="0 0 72 72" aria-hidden="true">
+    <svg class="logo-mark" viewBox="0 0 88 88" aria-hidden="true">
       <defs>
-        <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8f2344"/><stop offset="1" stop-color="#5c0e29"/></linearGradient>
-        <linearGradient id="lg2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e8bd70"/><stop offset="1" stop-color="#b78338"/></linearGradient>
+        <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8c1d40"/><stop offset="1" stop-color="#521126"/></linearGradient>
+        <linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0c777"/><stop offset="1" stop-color="#b78034"/></linearGradient>
+        <linearGradient id="seaLogo" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#57b9c1"/><stop offset="1" stop-color="#187e8e"/></linearGradient>
+        <filter id="logoShadow"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity=".22"/></filter>
       </defs>
-      <circle cx="36" cy="36" r="34" fill="url(#lg1)"/>
-      <path d="M15 48c12 7 30 8 43 1" fill="none" stroke="#d7edf0" stroke-width="4" stroke-linecap="round"/>
-      <path d="M20 43h32l-6 8H25z" fill="#f7efe2"/>
-      <path d="M36 17v28" stroke="#f4d49a" stroke-width="3"/>
-      <path d="M37 19l14 20H37z" fill="#f6f2eb"/>
-      <path d="M31 20L20 37h11z" fill="#e5b967"/>
-      <path d="M17 26c7-5 12-6 18-4" fill="none" stroke="#3aa09a" stroke-width="3.5" stroke-linecap="round"/>
-      <path d="M17 26c-1 8 1 13 5 18" fill="none" stroke="#3aa09a" stroke-width="3.5" stroke-linecap="round"/>
-      <circle cx="18" cy="24" r="3" fill="#3aa09a"/>
+      <path d="M44 3C66 3 82 19 82 41c0 25-18 38-38 44C24 79 6 66 6 41 6 19 22 3 44 3z" fill="url(#lg1)" filter="url(#logoShadow)"/>
+      <path d="M16 57c14 8 41 9 56 0" fill="none" stroke="url(#seaLogo)" stroke-width="5" stroke-linecap="round"/>
+      <path d="M21 50h46l-9 12H31z" fill="#fff8ec"/>
+      <path d="M44 17v34" stroke="#f2d08f" stroke-width="3.4" stroke-linecap="round"/>
+      <path d="M46 19l19 25H46z" fill="#ffffff" opacity=".98"/>
+      <path d="M40 21L24 42h16z" fill="url(#lg2)"/>
+      <circle cx="62" cy="21" r="6" fill="#fff" stroke="#f0c777" stroke-width="2"/>
+      <path d="M17 31c5-8 11-11 18-10M17 31c-1 8 2 14 6 19" fill="none" stroke="#dca957" stroke-width="3" stroke-linecap="round"/>
+      <path d="M20 24l7 3-4 4M27 22l6 4-5 3" fill="none" stroke="#dca957" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="44" cy="44" r="3" fill="#fff" opacity=".8"/>
     </svg>
-    <span><b>فرجان الحركية</b><small>Kinesics Farjan</small></span>
+    <span><b>فرجان الحركية</b><small>حركة • نطق • ذكاء</small></span>
   </a>
   <nav class="topnav" id="topnav">
     <button data-scroll="about">عن المنصة</button>
@@ -71,7 +75,13 @@
         <g filter="url(#softshadow)">
           <path d="M154 315Q260 268 366 315L391 558Q259 608 129 558Z" fill="url(#robeg)"/>
           <path d="M183 318Q260 292 337 318L324 456Q260 487 196 456Z" fill="url(#vestg)"/>
+          <path d="M207 323Q260 306 313 323M202 437Q260 459 319 437" fill="none" stroke="#d7a75d" stroke-width="5" opacity=".85"/>
+          <circle cx="260" cy="344" r="5" fill="#e5bd74"/><circle cx="260" cy="368" r="5" fill="#e5bd74"/><circle cx="260" cy="392" r="5" fill="#e5bd74"/>
           <circle cx="260" cy="210" r="102" fill="url(#faceg)"/>
+          <ellipse cx="224" cy="164" rx="33" ry="18" fill="#fff" opacity=".13"/>
+          <ellipse cx="176" cy="218" rx="13" ry="24" fill="#efb69d"/><ellipse cx="344" cy="218" rx="13" ry="24" fill="#efb69d"/>
+          <path d="M250 224q10 7 20 0" fill="none" stroke="#cc8c72" stroke-width="3" stroke-linecap="round"/>
+          <path d="M199 178q20-12 39-2M282 176q18-10 39 2" fill="none" stroke="#3b2926" stroke-width="7" stroke-linecap="round"/>
           <ellipse cx="260" cy="289" rx="65" ry="18" fill="#c77d62" opacity=".18" filter="url(#inner)"/>
           <path d="M166 185Q167 93 258 88Q350 94 355 184Q327 150 293 141Q251 129 205 145Z" fill="url(#hairg)"/>
           <path d="M150 139Q190 76 261 70Q339 76 376 142Q331 117 293 114Q224 109 150 139Z" fill="#fff"/>
@@ -174,13 +184,13 @@
       <div class="speech-picture" id="speechPicture">🦆</div>
       <div class="speech-target" id="speechTarget">بَ</div>
       <div class="speech-example" id="speechExample">مثل: بَطَّة</div>
-      <div class="makhraj-box"><span>مخرج الصوت</span><b id="speechMakhraj">أغلق الشفتين ثم افتحهما مع خروج الصوت.</b></div>
+      <div class="makhraj-box"><div class="makhraj-head"><span>مخرج الصوت</span><button class="makhraj-voice" id="makhrajVoiceBtn">🔊 اسمع الشرح</button></div><b id="speechMakhraj">أغلق الشفتين ثم افتحهما مع خروج الصوت.</b></div>
       <p id="speechPrompt">استمع أولًا، ثم انطق الصوت بوضوح.</p>
-      <div class="speech-controls"><button class="ghost" id="listenTargetBtn">🔊 اسمع النموذج</button><button class="primary" id="recordSpeechBtn">🎙️ ابدأ النطق</button></div>
+      <div class="speech-controls"><button class="ghost" id="listenTargetBtn">🔊 اسمع النموذج</button><button class="ghost" id="slowTargetBtn">🐢 اسمع ببطء</button><button class="primary" id="recordSpeechBtn">🎙️ ابدأ النطق</button></div>
       <div class="recognition-live"><small>ما التقطه النظام</small><b id="heardText">—</b><span id="recognitionLang">—</span></div>
       <div class="speech-score-box"><div class="score-ring" id="speechScoreRing"><b id="speechScore">0%</b></div><div><h3 id="speechFeedback">جاهز؟</h3><p id="speechFeedbackText">اسمع النموذج ثم جرّب.</p></div></div>
       <div class="speech-progress"><div><i id="speechProgressBar"></i></div></div>
-      <div class="speech-next-row"><button class="ghost hidden" id="retrySpeechBtn">↻ أعد المحاولة</button><button class="primary hidden" id="nextSpeechBtn">التالي</button></div>
+      <div class="speech-next-row"><button class="ghost hidden" id="retrySpeechBtn">↻ أعد المحاولة</button><button class="ghost hidden" id="parentConfirmSpeechBtn">✓ تأكيد ولي الأمر</button><button class="primary hidden" id="nextSpeechBtn">التالي</button></div>
     </div>
   </div>
   <footer class="page-footer">فكرة وتصميم وتنفيذ: الأخصائي معاذ الربيع</footer>

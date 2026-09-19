@@ -40,3 +40,52 @@
 .tiny-note{color:var(--muted);font-size:12px;line-height:1.7;margin-top:10px}
 #voiceToggleBtn,#playVoiceToggleBtn{white-space:nowrap}
 @media(max-width:760px){.creator-stamp{position:static;margin-top:10px}.credit-inline{flex-direction:column;align-items:flex-start}.eval-kpis{grid-template-columns:1fr}.show-art{height:145px}}
+
+/* --- Qatar / Gulf heritage visual identity --- */
+:root{--primary:#8A1538;--primary2:#5f0e28;--sand:#d7b57c;--cream:#fbf5e9;--ink:#173847;--muted:#6b7d82;--green:#16856a;--orange:#cc8a3f;--line:#eadfce;--shadow:0 18px 50px rgba(77,35,27,.11)}
+body{background:
+radial-gradient(circle at 10% 0%,rgba(138,21,56,.055),transparent 28%),
+linear-gradient(180deg,#fffaf2,#f8efe0);}
+.topbar{border-bottom:3px solid rgba(138,21,56,.1)}
+.topbar:after{content:"";position:absolute;bottom:-3px;left:0;right:0;height:3px;background:repeating-linear-gradient(90deg,#8A1538 0 28px,#fff 28px 34px,#d7b57c 34px 62px,#fff 62px 68px)}
+.brand-mark{background:linear-gradient(145deg,#8A1538,#641027);color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.15),0 8px 20px rgba(138,21,56,.18)}
+.primary{background:linear-gradient(135deg,#8A1538,#5f0e28);box-shadow:0 10px 24px rgba(138,21,56,.2)}
+.eyebrow{color:#8A1538;background:#f8e8ed;border:1px solid #efd1da}
+.hero{background:
+linear-gradient(135deg,rgba(138,21,56,.045),transparent 38%),
+radial-gradient(circle at 15% 0%,#fff 0 16%,transparent 40%),
+linear-gradient(180deg,#fffaf1,#f8efdf);position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:auto 0 0 0;height:72px;opacity:.25;background:linear-gradient(135deg,transparent 25%,#8A1538 25% 35%,transparent 35% 65%,#d7b57c 65% 75%,transparent 75%) 0 0/90px 90px}
+.hero-copy,.hero-world{position:relative;z-index:2}
+.hero h1 em{color:#8A1538}.trust-row span:before{color:#8A1538}
+.feature-strip article{border-top:4px solid #8A1538}.feature-strip article:nth-child(even){border-top-color:#d7b57c}
+.quote-card{background:linear-gradient(145deg,#8A1538,#4d0c22);position:relative;overflow:hidden}
+.quote-card:after{content:"✦";position:absolute;left:22px;bottom:6px;font-size:130px;color:rgba(255,255,255,.06)}
+.show-card.sea{background:linear-gradient(145deg,#e9f6f7,#c7e1e5)}
+.show-card.pearl{background:linear-gradient(145deg,#fff4df,#eacb91)}
+.show-card.sail{background:linear-gradient(145deg,#f6ece9,#e5c6cf)}
+.footer{background:linear-gradient(135deg,#5f0e28,#8A1538);border-top:6px solid #d7b57c}
+.app-page{background:
+linear-gradient(135deg,rgba(138,21,56,.03),transparent 40%),
+#f8f1e5}
+.side-nav{background:linear-gradient(180deg,#173847,#102c38)}
+.side-nav button.active{background:#8A1538;color:#fff}
+.adventure-banner{background:
+radial-gradient(circle at 83% 28%,rgba(255,255,255,.14),transparent 25%),
+linear-gradient(135deg,#8A1538,#5f0e28)!important}
+.points-pill,.child-pill{border:1px solid #ead7dc}.goal-chip{background:#f7e6ec;color:#8A1538}
+.progress-track i{background:linear-gradient(90deg,#d7b57c,#8A1538)}
+.rate-btn:hover,.rate-btn.active{border-color:#8A1538;background:#faedf1;box-shadow:0 8px 24px rgba(138,21,56,.15)}
+.bar{background:linear-gradient(#d8b77e,#8A1538)}
+.hero-anime-world{border-color:#fff;box-shadow:0 28px 80px rgba(92,50,34,.16)}
+.hero-anime-world:before{content:"";position:absolute;inset:0;border-radius:30px;pointer-events:none;background:linear-gradient(90deg,rgba(138,21,56,.12) 0 7px,transparent 7px calc(100% - 7px),rgba(138,21,56,.12) calc(100% - 7px))}
+.creator-stamp{background:#fff;color:#8A1538;border:1px solid #ecd4db}
+.page-credit{margin-top:28px;padding:18px 24px;text-align:center;font-weight:800;color:#fff;background:linear-gradient(135deg,#5f0e28,#8A1538);border-top:5px solid #d7b57c;letter-spacing:.15px;box-shadow:0 -8px 30px rgba(138,21,56,.08)}
+.page-credit:before,.page-credit:after{content:"◆";color:#e5c98f;margin:0 10px;font-size:11px}
+.game-card,.card,.form-card,.world-card{border-color:#eee1cf}
+.game-card:hover,.world-card:hover{transform:translateY(-3px);box-shadow:0 24px 60px rgba(92,50,34,.14)}
+.game-card,.world-card{transition:.22s ease}
+.camera-overlay{background:linear-gradient(145deg,rgba(95,14,40,.96),rgba(138,21,56,.94))}
+.pose-status{background:rgba(64,12,30,.82)}
+.medical-note{border-right:4px solid #d7b57c}
+@media(max-width:760px){.page-credit{padding-bottom:86px;font-size:13px}.hero:before{height:46px;background-size:60px 60px}.creator-stamp{font-size:11px;text-align:center}}

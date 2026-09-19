@@ -66,6 +66,17 @@ function bindRoutes(){
   }));
   $$('[data-scroll]').forEach(el=>el.addEventListener('click',()=>{$(`#${el.dataset.scroll}`)?.scrollIntoView({behavior:'smooth'}); if(window.innerWidth<761) $('.topnav')?.classList.remove('open')}));
 }
+
+function ensurePageCredits(){
+  $$('.page').forEach(page=>{
+    if(page.querySelector('.page-credit')) return;
+    const credit=document.createElement('div');
+    credit.className='page-credit';
+    credit.textContent='فكرة وتصميم وتنفيذ الأخصائي معاذ الربيع';
+    page.appendChild(credit);
+  });
+}
+
 function goalLabel(v){return {balance:'تعزيز التوازن',upper:'رفع ومد الذراعين',mobility:'الحركة والوصول',general:'نشاط حركي عام'}[v]||'نشاط حركي'}
 function progressData(){
   const sessions=state.sessions.length, points=state.points;
@@ -231,6 +242,7 @@ $('#planHold')?.addEventListener('input',e=>$('#planHoldValue').textContent=e.ta
 $('#savePlanBtn')?.addEventListener('click',()=>{state.plan={game:$('#planGame').value,rounds:+$('#planRounds').value,hold:+$('#planHold').value,note:$('#planNote').value.trim()}; saveState(); $('#planSaveMsg').textContent='تم حفظ الخطة بنجاح.'; setTimeout(()=>$('#planSaveMsg').textContent='',2200); toast('تم حفظ الخطة'); speak('تم حفظ الخطة العلاجية بنجاح')});
 
 bindRoutes();
+ensurePageCredits();
 if(state.profile){$('#childName').value=state.profile.name||''; $('#childAge').value=state.profile.age||''; $('#childGoal').value=state.profile.goal||'balance'; $('#childLevel').value=state.profile.level||'1'}
 syncVoiceButtons();
 window.speechSynthesis?.getVoices?.();

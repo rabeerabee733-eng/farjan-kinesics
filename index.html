@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#10384a" />
+  <meta name="description" content="فرجان الحركية - منصة ألعاب حركية تفاعلية مستوحاة من التراث الخليجي." />
+  <title>فرجان الحركية | Kinesics Farjan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <noscript><div class="noscript">يحتاج الموقع إلى تفعيل JavaScript.</div></noscript>
+
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#" data-route="landing" aria-label="فرجان الحركية">
+      <span class="brand-mark" aria-hidden="true">ف</span>
+      <span><b>فرجان الحركية</b><small>Kinesics Farjan</small></span>
+    </a>
+    <nav class="topnav" aria-label="التنقل الرئيسي">
+      <button data-scroll="about">عن المنصة</button>
+      <button data-scroll="gamesShowcase">الألعاب</button>
+      <button data-scroll="howItWorks">كيف تعمل؟</button>
+      <button class="nav-login" data-route="dashboard">لوحة المتابعة</button>
+      <button class="primary small" data-route="onboarding">ابدأ الآن</button>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+  </header>
+
+  <main>
+    <section class="page active" id="page-landing">
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">تأهيل حركي بأسلوب يحبّه الطفل</span>
+          <h1>التراث يلهم…<br><em>والحركة تصنع الأمل</em></h1>
+          <p>منصة تفاعلية تحول التمارين الحركية إلى مغامرات مستوحاة من الفريج الخليجي، مع تتبع مباشر للحركة عبر كاميرا الجهاز.</p>
+          <div class="hero-actions">
+            <button class="primary" data-route="onboarding">ابدأ التجربة</button>
+            <button class="ghost" id="watchDemoBtn">▶ شاهد كيف تعمل</button>
+          </div>
+          <div class="trust-row">
+            <span>✓ معالجة محلية للفيديو</span><span>✓ بدون أجهزة إضافية</span><span>✓ مناسب للمنزل والمراكز</span>
+          </div>
+        </div>
+        <div class="hero-world" aria-label="مشهد فريج خليجي مرسوم">
+          <div class="sun"></div><div class="palm p1">🌴</div><div class="palm p2">🌴</div>
+          <div class="house h1"><span></span></div><div class="house h2"><span></span></div>
+          <div class="dhow">⛵</div><div class="kid">🧒🏻</div>
+          <div class="speech">هلا بك في فرجان الحركية!</div>
+        </div>
+      </section>
+
+      <section class="feature-strip">
+        <article><span>🎮</span><b>ألعاب تراثية تفاعلية</b><small>الحجلة، اللؤلؤ، الشراع والمزيد</small></article>
+        <article><span>🧠</span><b>تحليل حركة فوري</b><small>تتبع وضعية الجسم داخل المتصفح</small></article>
+        <article><span>📈</span><b>تقدم قابل للمتابعة</b><small>جلسات وتكرارات ومدد إنجاز</small></article>
+        <article><span>🛡️</span><b>خصوصية أولًا</b><small>لا يتم رفع الفيديو في هذه النسخة</small></article>
+      </section>
+
+      <section class="content-section two-col" id="about">
+        <div>
+          <span class="eyebrow">الفكرة</span>
+          <h2>نحو جلسة ينتظرها الطفل بدل أن يتجنبها</h2>
+          <p>يختار الأخصائي هدفًا حركيًا، ثم يتحول الهدف إلى تحدٍ داخل عالم تراثي ممتع. الطفل يرى التعليمات، يؤدي الحركة أمام الكاميرا، ويحصل على تغذية راجعة فورية ومكافآت.</p>
+        </div>
+        <div class="quote-card"><b>«كل حركة… حكاية تراث، وخطوة نحو ثقة أكبر.»</b><p>التجربة مصممة لتكون أداة مساندة للبرنامج التأهيلي وليست بديلًا عن التقييم السريري.</p></div>
+      </section>
+
+      <section class="content-section" id="gamesShowcase">
+        <div class="section-head"><div><span class="eyebrow">ألعاب النسخة V2</span><h2>ثلاثة تحديات من محرّك حركي واحد</h2></div></div>
+        <div class="game-showcase-grid">
+          <article class="show-card sea"><div class="show-emoji">⚖️</div><h3>الحجلة الخليجية</h3><p>توازن ورفع قدم مع تثبيت الوضعية.</p><span>التوازن • الجزء السفلي</span></article>
+          <article class="show-card pearl"><div class="show-emoji">🦪</div><h3>جمع اللؤلؤ</h3><p>انحناء ووصول باليد بطريقة مبسطة.</p><span>الوصول • ثني الركبتين</span></article>
+          <article class="show-card sail"><div class="show-emoji">⛵</div><h3>رفع الشراع</h3><p>رفع الذراعين للأعلى والمحافظة على الوضع.</p><span>الكتفان • الذراعان</span></article>
+        </div>
+      </section>
+
+      <section class="content-section" id="howItWorks">
+        <div class="section-head"><div><span class="eyebrow">رحلة الاستخدام</span><h2>من الملف الشخصي إلى تقرير الجلسة</h2></div></div>
+        <div class="steps-grid">
+          <article><i>1</i><b>ملف الطفل</b><p>الاسم والعمر والهدف الحركي ومستوى النشاط.</p></article>
+          <article><i>2</i><b>الأمان والمعايرة</b><p>التأكد من مساحة اللعب وظهور الجسم كاملًا.</p></article>
+          <article><i>3</i><b>المغامرة</b><p>اختيار عالم الفريج واللعبة المناسبة.</p></article>
+          <article><i>4</i><b>النتيجة</b><p>حفظ الجلسة وإظهار مؤشرات واضحة للأهل والأخصائي.</p></article>
+        </div>
+      </section>
+
+      <footer class="footer"><div class="brand compact"><span class="brand-mark">ف</span><span><b>فرجان الحركية</b><small>Kinesics Farjan</small></span></div><p>نسخة تقنية تجريبية — 2026</p></footer>
+    </section>
+
+    <section class="page app-page" id="page-onboarding">
+      <div class="app-shell narrow">
+        <button class="back-link" data-route="landing">← العودة للرئيسية</button>
+        <div class="wizard-head"><span class="eyebrow">إنشاء ملف الطفل</span><h2>لنبدأ الرحلة</h2><p>هذه البيانات تحفظ محليًا على هذا الجهاز في النسخة التجريبية.</p></div>
+        <div class="stepper"><span class="active">1 البيانات</span><span>2 الأمان</span><span>3 العالم</span></div>
+        <form class="form-card" id="childForm">
+          <div class="avatar-picker"><div id="profileAvatar">🧒🏻</div><span>الملف الشخصي</span></div>
+          <div class="form-grid">
+            <label>اسم الطفل<input id="childName" required maxlength="30" placeholder="مثال: علي"></label>
+            <label>العمر<select id="childAge" required><option value="">اختر العمر</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select></label>
+            <label>الهدف الحركي<select id="childGoal"><option value="balance">تعزيز التوازن</option><option value="upper">رفع ومد الذراعين</option><option value="mobility">الحركة والوصول</option><option value="general">نشاط حركي عام</option></select></label>
+            <label>مستوى النشاط<select id="childLevel"><option value="1">مبتدئ</option><option value="2">متوسط</option><option value="3">متقدم</option></select></label>
+          </div>
+          <div class="consent-box"><input type="checkbox" id="consent" required><label for="consent">أفهم أن هذه النسخة تجريبية وليست أداة تشخيص أو وصف علاج، وأن الحركات المناسبة للطفل يجب أن يحددها ولي الأمر/الأخصائي المؤهل.</label></div>
+          <button class="primary full" type="submit">التالي: فحص الأمان</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="page app-page" id="page-safety">
+      <div class="app-shell narrow">
+        <button class="back-link" data-route="onboarding">← رجوع</button>
+        <div class="wizard-head"><span class="eyebrow">الخطوة 2 من 3</span><h2>فحص الأمان والمعايرة</h2><p>قبل تشغيل الكاميرا، جهّز مساحة آمنة ومفتوحة أمام الجهاز.</p></div>
+        <div class="safety-grid">
+          <label><input type="checkbox" class="safe-check"> <span>📱</span><b>الجهاز ثابت</b><small>على حامل أو سطح لا يتحرك.</small></label>
+          <label><input type="checkbox" class="safe-check"> <span>↔️</span><b>مساحة خالية</b><small>لا توجد عوائق قريبة من الطفل.</small></label>
+          <label><input type="checkbox" class="safe-check"> <span>👨‍👩‍👧</span><b>إشراف مناسب</b><small>وجود ولي الأمر عند الحاجة.</small></label>
+          <label><input type="checkbox" class="safe-check"> <span>🛑</span><b>توقف عند الألم</b><small>لا تستمر عند الألم أو الدوار.</small></label>
+        </div>
+        <div class="calibration-preview">
+          <div class="calibration-icon">🧍</div><div><b>وضعية الكاميرا</b><p>ضع الجهاز بحيث يظهر الجسم كاملًا من الرأس حتى القدمين. ستجري المعايرة الفعلية عند بدء اللعبة.</p></div>
+        </div>
+        <button class="primary full" id="safetyNext" disabled>متابعة واختيار عالم الفريج</button>
+      </div>
+    </section>
+
+    <section class="page app-page" id="page-worlds">
+      <div class="app-shell">
+        <button class="back-link" data-route="safety">← رجوع</button>
+        <div class="wizard-head"><span class="eyebrow">الخطوة 3 من 3</span><h2>اختر عالم الفريج</h2><p>يمكن تغييره لاحقًا في أي وقت.</p></div>
+        <div class="world-grid" id="worldGrid">
+          <button class="world-card selected" data-world="sea"><div class="world-art sea-art">⛵🌴</div><b>فريج البحر</b><small>القوارب واللؤلؤ والنسيم البحري</small><i>✓</i></button>
+          <button class="world-card" data-world="old"><div class="world-art old-art">🏘️🪔</div><b>فريج الماضي</b><small>البيوت الطينية وسكيك الفريج</small><i>✓</i></button>
+          <button class="world-card" data-world="yard"><div class="world-art yard-art">🪁🌴</div><b>ساحة الألعاب</b><small>ألعاب شعبية وتحديات مرحة</small><i>✓</i></button>
+        </div>
+        <button class="primary full max640" id="finishOnboarding">ابدأ المغامرة</button>
+      </div>
+    </section>
+
+    <section class="page app-page" id="page-dashboard">
+      <div class="app-layout">
+        <aside class="side-nav">
+          <div class="brand compact"><span class="brand-mark">ف</span><span><b>فرجان</b><small>Kinesics</small></span></div>
+          <button class="active" data-route="dashboard">⌂ <span>الرئيسية</span></button>
+          <button data-route="games">🎮 <span>الألعاب</span></button>
+          <button data-route="reports">📈 <span>التقارير</span></button>
+          <button data-route="therapist">🩺 <span>لوحة الأخصائي</span></button>
+          <button id="resetDataBtn">⚙️ <span>إعادة الضبط</span></button>
+        </aside>
+        <div class="dashboard-main">
+          <div class="dash-top"><div><span class="eyebrow">مرحبًا</span><h2 id="welcomeName">يا بطل 👋</h2></div><div class="points-pill">⭐ <b id="dashboardPoints">0</b> نقطة</div></div>
+          <section class="adventure-banner"><div><span>مغامرة اليوم</span><h3 id="todayMission">جاهز للعب اليوم؟</h3><p>كل حركة تقرّبك من هدفك.</p><button class="primary" data-route="games">ابدأ جلسة اليوم</button></div><div class="banner-character">🧒🏻</div></section>
+          <div class="quick-grid">
+            <button data-route="games"><span>🎮</span><b>الألعاب الحركية</b><small>3 ألعاب جاهزة</small></button>
+            <button data-route="reports"><span>🎯</span><b>تقدمي</b><small id="sessionCountMini">لا جلسات بعد</small></button>
+            <button id="treasureBtn"><span>🏆</span><b>كنوزي</b><small id="treasureCount">0 مكافآت</small></button>
+            <button data-route="therapist"><span>🩺</span><b>متابعة الأخصائي</b><small>خطة وجلسات وملاحظات</small></button>
+          </div>
+          <section class="last-session card"><div class="section-head"><div><span class="eyebrow">آخر نشاط</span><h3>ملخص سريع</h3></div><button class="text-btn" data-route="reports">كل التقارير ←</button></div><div id="lastSessionEmpty" class="empty-state">بعد أول لعبة سيظهر ملخص الجلسة هنا.</div><div id="lastSessionStats" class="stat-grid hidden"></div></section>
+        </div>
+      </div>
+    </section>
+
+    <section class="page app-page" id="page-games">
+      <div class="app-layout">
+        <aside class="side-nav mini-nav">
+          <div class="brand compact"><span class="brand-mark">ف</span></div>
+          <button data-route="dashboard">⌂</button><button class="active" data-route="games">🎮</button><button data-route="reports">📈</button><button data-route="therapist">🩺</button>
+        </aside>
+        <div class="dashboard-main">
+          <div class="dash-top"><div><button class="back-link" data-route="dashboard">← الرئيسية</button><h2>الألعاب الحركية</h2><p>اختر التحدي المناسب لخطة اليوم.</p></div><div class="points-pill">⭐ <b id="gamesPoints">0</b></div></div>
+          <div class="filter-pills"><button class="active">الكل</button><button>التوازن</button><button>الذراعان</button><button>الوصول</button></div>
+          <div class="games-grid">
+            <article class="game-card"><div class="game-visual balance-bg"><span>⚖️</span></div><div><span class="level">مستوى 1</span><h3>الحجلة الخليجية</h3><p>ارفع قدمًا واحدة وحافظ على التوازن.</p><div class="game-meta"><span>⏱ 3–5 دقائق</span><span>🎯 5 جولات</span></div><button class="primary full game-start" data-game="balance">ابدأ اللعبة</button></div></article>
+            <article class="game-card"><div class="game-visual pearl-bg"><span>🦪</span></div><div><span class="level">مستوى 1</span><h3>جمع اللؤلؤ</h3><p>انحنِ ضمن حدود آمنة واجمع اللؤلؤ.</p><div class="game-meta"><span>⏱ 3–5 دقائق</span><span>🎯 6 لآلئ</span></div><button class="primary full game-start" data-game="pearl">ابدأ اللعبة</button></div></article>
+            <article class="game-card"><div class="game-visual sail-bg"><span>⛵</span></div><div><span class="level">مستوى 1</span><h3>رفع الشراع</h3><p>ارفع الذراعين للأعلى وثبّت الوضعية.</p><div class="game-meta"><span>⏱ 3–5 دقائق</span><span>🎯 5 مرات</span></div><button class="primary full game-start" data-game="sail">ابدأ اللعبة</button></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page app-page" id="page-play">
+      <div class="play-wrap">
+        <div class="play-head"><button class="danger-lite" id="endGameBtn">✕ إنهاء اللعبة</button><div><span class="eyebrow" id="playGameType">لعبة حركية</span><h2 id="playTitle">الحجلة الخليجية</h2></div><div class="play-score"><span>⭐ <b id="playScore">0</b></span><span>⏱ <b id="sessionTimer">00:00</b></span></div></div>
+        <div class="play-grid">
+          <section class="camera-panel">
+            <div class="camera-stage" id="cameraStage"><video id="video" playsinline muted></video><canvas id="canvas"></canvas>
+              <div class="camera-overlay" id="cameraOverlay"><div class="mascot">🧒🏻</div><h3>جاهز للمغامرة؟</h3><p>اسمح باستخدام الكاميرا وابتعد حتى يظهر جسمك كاملًا.</p><button class="primary" id="startCameraBtn">تشغيل الكاميرا والمعايرة</button><button class="ghost dark" id="demoModeBtn">تجربة بدون كاميرا</button></div>
+              <div class="feedback-bubble" id="feedbackBubble">استعد…</div>
+              <div class="pose-status" id="poseStatus">● الكاميرا متوقفة</div>
+            </div>
+            <div class="camera-toolbar"><button class="ghost" id="pauseBtn">⏸ إيقاف مؤقت</button><span>🔒 تحليل الفيديو يتم محليًا داخل المتصفح.</span></div>
+          </section>
+          <aside class="mission-panel">
+            <div class="mission-icon" id="missionIcon">⚖️</div><span class="eyebrow">المهمة الحالية</span><h3 id="missionTitle">ارفع قدمًا واحدة</h3><p id="missionDesc">حافظ على توازنك لمدة 3 ثوانٍ.</p>
+            <div class="hold-bar"><i id="holdProgress"></i></div><div class="hold-label"><b id="holdValue">0.0</b><span id="holdTargetLabel"> / 3.0 ثانية</span></div>
+            <div class="round-box"><span>التقدم</span><b id="roundValue">0 / 5</b></div>
+            <div class="live-metrics"><h4>القراءات المباشرة</h4><div><span>ظهور الجسم</span><b id="detected">بانتظار الكاميرا</b></div><div><span id="metric1Label">زاوية الركبة اليسرى</span><b id="metric1">—</b></div><div><span id="metric2Label">زاوية الركبة اليمنى</span><b id="metric2">—</b></div><div><span>الثقة بالتتبع</span><b id="trackingConfidence">—</b></div></div>
+            <button class="primary full hidden" id="simulateSuccessBtn">محاكاة حركة صحيحة</button>
+            <div class="medical-note">تنبيه: هذه آلية تقنية تجريبية، وليست قياسًا سريريًا أو وصفة علاجية.</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="page app-page" id="page-result">
+      <div class="result-wrap"><div class="celebrate">✨ ⭐ ✨</div><div class="result-avatar">🧒🏻</div><span class="eyebrow">اكتملت الجلسة</span><h2 id="resultHeadline">أحسنت!</h2><p id="resultSubtitle">أنهيت التحدي بنجاح.</p><div class="result-stats" id="resultStats"></div><div class="result-actions"><button class="ghost" data-route="reports">عرض التقرير</button><button class="primary" data-route="games">لعبة أخرى</button></div></div>
+    </section>
+
+    <section class="page app-page" id="page-reports">
+      <div class="app-layout">
+        <aside class="side-nav mini-nav"><div class="brand compact"><span class="brand-mark">ف</span></div><button data-route="dashboard">⌂</button><button data-route="games">🎮</button><button class="active" data-route="reports">📈</button><button data-route="therapist">🩺</button></aside>
+        <div class="dashboard-main">
+          <div class="dash-top"><div><button class="back-link" data-route="dashboard">← الرئيسية</button><h2>تقارير التقدم</h2><p>مؤشرات مبسطة من الجلسات المسجلة على هذا الجهاز.</p></div><button class="ghost" id="exportReportBtn">⬇ تصدير التقرير</button></div>
+          <div class="report-kpis"><article><span>📅</span><small>الجلسات المنجزة</small><b id="kpiSessions">0</b></article><article><span>⏱</span><small>الوقت الكلي</small><b id="kpiTime">0 د</b></article><article><span>✅</span><small>المهام المكتملة</small><b id="kpiRounds">0</b></article><article><span>⭐</span><small>النقاط</small><b id="kpiPoints">0</b></article></div>
+          <section class="card"><div class="section-head"><div><span class="eyebrow">آخر 7 جلسات</span><h3>مدة الجلسات</h3></div></div><div class="bar-chart" id="barChart"><div class="empty-state">لا توجد بيانات بعد.</div></div></section>
+          <section class="card"><div class="section-head"><div><span class="eyebrow">السجل</span><h3>الجلسات الأخيرة</h3></div></div><div class="session-table-wrap"><table class="session-table"><thead><tr><th>اللعبة</th><th>التاريخ</th><th>المدة</th><th>المهام</th><th>النقاط</th></tr></thead><tbody id="sessionsBody"><tr><td colspan="5" class="empty-cell">لا توجد جلسات محفوظة.</td></tr></tbody></table></div></section>
+        </div>
+      </div>
+    </section>
+
+    <section class="page app-page" id="page-therapist">
+      <div class="app-layout">
+        <aside class="side-nav mini-nav"><div class="brand compact"><span class="brand-mark">ف</span></div><button data-route="dashboard">⌂</button><button data-route="games">🎮</button><button data-route="reports">📈</button><button class="active" data-route="therapist">🩺</button></aside>
+        <div class="dashboard-main">
+          <div class="dash-top"><div><button class="back-link" data-route="dashboard">← الرئيسية</button><span class="eyebrow">واجهة تجريبية</span><h2>لوحة الأخصائي</h2><p>إعداد خطة أسبوعية مبسطة لهذا الطفل.</p></div><div class="child-pill">👤 <b id="therapistChildName">الطفل</b></div></div>
+          <div class="therapist-grid">
+            <section class="card child-summary"><h3>ملف الطفل</h3><div class="big-avatar">🧒🏻</div><b id="tName">—</b><small id="tMeta">—</small><div class="goal-chip" id="tGoal">—</div></section>
+            <section class="card plan-builder"><div class="section-head"><div><span class="eyebrow">خطة هذا الأسبوع</span><h3>إعداد التمارين</h3></div></div><label>اللعبة الأساسية<select id="planGame"><option value="balance">الحجلة الخليجية</option><option value="pearl">جمع اللؤلؤ</option><option value="sail">رفع الشراع</option></select></label><label>عدد الجولات<input type="range" id="planRounds" min="3" max="10" value="5"><span id="planRoundsValue">5</span></label><label>مدة الثبات (ثانية)<input type="range" id="planHold" min="1" max="5" value="3"><span id="planHoldValue">3</span></label><label>ملاحظة للأهل<textarea id="planNote" rows="3" placeholder="مثال: نفّذ الجلسة مرة يوميًا عند توفر مساحة آمنة."></textarea></label><button class="primary" id="savePlanBtn">حفظ الخطة على هذا الجهاز</button><p class="save-msg" id="planSaveMsg"></p></section>
+          </div>
+          <section class="card"><div class="section-head"><div><span class="eyebrow">المتابعة</span><h3>ملخص آخر الجلسات</h3></div></div><div id="therapistSessions" class="mini-session-list"><div class="empty-state">لا توجد جلسات بعد.</div></div></section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="demoModal" role="dialog" aria-modal="true"><div class="modal-card"><button class="modal-close" id="closeDemoModal">✕</button><span class="eyebrow">كيف تعمل المنصة؟</span><h2>4 خطوات بسيطة</h2><div class="modal-steps"><p><b>1.</b> أنشئ ملف الطفل وحدد الهدف.</p><p><b>2.</b> تأكد من الأمان وموضع الكاميرا.</p><p><b>3.</b> اختر لعبة وابدأ تتبع الحركة.</p><p><b>4.</b> راجع نتيجة الجلسة والتقدم.</p></div><button class="primary full" data-route="onboarding" id="demoStartBtn">ابدأ التجربة الآن</button></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="features.css">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
@@ -122,7 +123,7 @@
     <div class="section-head"><div><span class="eyebrow">ابدأ من هنا</span><h2>ثلاثة مسارات واضحة</h2></div></div>
     <div class="program-grid">
       <button class="program-card" data-route="games"><span>🤸</span><h3>الألعاب الحركية</h3><p>التوازن والوصول ورفع الذراعين.</p></button>
-      <button class="program-card" data-route="speech"><span>🗣️</span><h3>النطق واللغة</h3><p>5 مستويات تبدأ بالحروف والحركات.</p></button>
+      <button class="program-card" data-route="speech"><span>🗣️</span><h3>النطق واللغة</h3><p>6 مستويات تبدأ بالحروف والحركات.</p></button>
       <button class="program-card" data-route="reports"><span>📈</span><h3>مستوى التقدم</h3><p>نتائج الجلسات وما يحتاج تحسينًا.</p></button>
     </div>
   </section>
@@ -150,7 +151,9 @@
 
 <section class="page app-page" id="page-dashboard">
   <div class="simple-shell">
+    <section id="childPicker" class="child-picker" hidden><label>الطفل الحالي<select id="activeChild" aria-label="اختيار الطفل"></select></label><button id="addChildBtn" class="ghost" type="button">إضافة طفل</button><small>البيانات محفوظة على هذا الجهاز.</small></section>
     <div class="simple-head"><div><span class="eyebrow">لوحة الطفل</span><h2 id="welcomeName">هلا يا بطل 👋</h2><p>اختر ما تريد فعله اليوم.</p></div><div class="points-pill">⭐ <b id="dashboardPoints">0</b></div></div>
+    <section class="card daily-card"><span class="eyebrow">رحلة قصيرة كل يوم</span><h3>جلسة اليوم</h3><p id="dailyDescription">حركة ثم نطق مع استراحة قصيرة.</p><button id="startDailyBtn" class="primary">ابدأ جلسة اليوم</button></section>
     <div class="big-actions">
       <button data-route="speech" class="big-action speech-a"><span>🗣️</span><b>النطق واللغة</b><small>ابدأ بالحروف والحركات</small></button>
       <button data-route="games" class="big-action move-a"><span>🤸</span><b>الحركة</b><small>3 ألعاب حركية</small></button>
@@ -212,6 +215,7 @@
 <section class="page app-page" id="page-play">
   <div class="play-wrap">
     <div class="play-head"><button class="danger-lite" id="endGameBtn">✕ إنهاء</button><div><span class="eyebrow" id="playGameType">لعبة حركية</span><h2 id="playTitle">الحجلة الخليجية</h2></div><div class="play-score"><span>⭐ <b id="playScore">0</b></span><span>⏱ <b id="sessionTimer">00:00</b></span></div></div>
+    <button id="showGuideBtn" class="ghost" aria-expanded="true" aria-controls="exerciseGuide">شرح التمرين وإرشاداته</button><section id="exerciseGuide" class="exercise-guide" aria-label="توضيح التمرين"></section>
     <div class="play-grid">
       <section class="camera-panel"><div class="camera-stage"><video id="video" playsinline muted></video><canvas id="canvas"></canvas><div class="camera-overlay" id="cameraOverlay"><div class="anime-small">🧒🏻</div><h3>جاهز؟</h3><p>ابتعد حتى يظهر جسمك كاملًا.</p><button class="primary" id="startCameraBtn">تشغيل الكاميرا</button><button class="ghost dark" id="demoModeBtn">تجربة بدون كاميرا</button></div><div class="feedback-bubble" id="feedbackBubble">استعد…</div><div class="pose-status" id="poseStatus">● الكاميرا متوقفة</div></div><div class="camera-toolbar"><button class="ghost" id="pauseBtn">⏸ إيقاف مؤقت</button><span>🔒 المعالجة تتم داخل المتصفح.</span></div></section>
       <aside class="mission-panel"><div class="mission-icon" id="missionIcon">⚖️</div><span class="eyebrow">المهمة</span><h3 id="missionTitle">ارفع قدمًا واحدة</h3><p id="missionDesc">حافظ على الوضعية.</p><div class="hold-bar"><i id="holdProgress"></i></div><div class="hold-label"><b id="holdValue">0.0</b><span id="holdTargetLabel"> / 3.0 ثانية</span></div><div class="round-box"><span>التقدم</span><b id="roundValue">0 / 5</b></div><div class="live-metrics"><div><span>ظهور الجسم</span><b id="detected">بانتظار الكاميرا</b></div><div><span id="metric1Label">المؤشر 1</span><b id="metric1">—</b></div><div><span id="metric2Label">المؤشر 2</span><b id="metric2">—</b></div><div><span>التتبع</span><b id="trackingConfidence">—</b></div></div><button class="primary full hidden" id="simulateSuccessBtn">محاكاة حركة صحيحة</button></aside>
@@ -221,13 +225,13 @@
 </section>
 
 <section class="page app-page" id="page-result">
-  <div class="result-wrap"><div class="celebrate">✨ ⭐ ✨</div><div class="result-avatar">🧒🏻</div><span class="eyebrow">انتهت الجلسة</span><h2 id="resultHeadline">أحسنت!</h2><p id="resultSubtitle">تم حفظ تقدمك.</p><div class="result-stats" id="resultStats"></div><section class="card evaluation-card"><h3>رأي ولي الأمر</h3><div class="rating-row"><button class="rate-btn" data-rate="1">😟</button><button class="rate-btn" data-rate="2">🙂</button><button class="rate-btn" data-rate="3">😊</button><button class="rate-btn" data-rate="4">😃</button><button class="rate-btn" data-rate="5">🌟</button></div><textarea id="evalNote" rows="3" placeholder="ملاحظة قصيرة..."></textarea><button class="primary" id="saveEvaluationBtn">حفظ التقييم</button><p class="save-msg" id="evalSaveMsg"></p></section><div class="result-actions"><button class="ghost" data-route="reports">عرض التقدم</button><button class="primary" data-route="dashboard">الرئيسية</button></div></div>
+  <div class="result-wrap"><div class="celebrate">✨ ⭐ ✨</div><div class="result-avatar">🧒🏻</div><span class="eyebrow">انتهت الجلسة</span><h2 id="resultHeadline">أحسنت!</h2><p id="resultSubtitle">تم حفظ تقدمك.</p><div class="result-stats" id="resultStats"></div><section class="card evaluation-card"><h3>رأي ولي الأمر</h3><div class="rating-row"><button class="rate-btn" data-rate="1">😟</button><button class="rate-btn" data-rate="2">🙂</button><button class="rate-btn" data-rate="3">😊</button><button class="rate-btn" data-rate="4">😃</button><button class="rate-btn" data-rate="5">🌟</button></div><textarea id="evalNote" rows="3" placeholder="ملاحظة قصيرة..."></textarea><button class="primary" id="saveEvaluationBtn">حفظ التقييم</button><p class="save-msg" id="evalSaveMsg"></p></section><button id="continueDailyBtn" class="primary full" hidden>بعد استراحة قصيرة، نكمل تمارين النطق</button><div class="result-actions"><button class="ghost" data-route="reports">عرض التقدم</button><button class="primary" data-route="dashboard">الرئيسية</button></div></div>
   <footer class="page-footer">فكرة وتصميم وتنفيذ: الأخصائي معاذ الربيع</footer>
 </section>
 
 <section class="page app-page" id="page-reports">
   <div class="simple-shell">
-    <div class="simple-head"><div><button class="back-link" data-route="dashboard">← الرئيسية</button><span class="eyebrow">التقدم والتقييم</span><h2>كيف يتقدم الطفل؟</h2></div><button class="ghost" id="exportReportBtn">⬇ تصدير</button></div>
+    <div class="simple-head"><div><button class="back-link" data-route="dashboard">← الرئيسية</button><span class="eyebrow">التقدم والتقييم</span><h2>كيف يتقدم الطفل؟</h2></div><div class="report-buttons"><button class="primary" id="weeklyPDFBtn">تنزيل تقرير الأسبوع PDF</button><button class="ghost" id="exportReportBtn">تصدير بيانات JSON</button></div></div>
     <div class="report-kpis"><article><span>📅</span><small>الجلسات</small><b id="kpiSessions">0</b></article><article><span>🗣️</span><small>النطق</small><b id="kpiSpeech">0</b></article><article><span>🤸</span><small>الحركة</small><b id="kpiMovement">0</b></article><article><span>⭐</span><small>النقاط</small><b id="kpiPoints">0</b></article></div>
     <section class="card"><div class="section-head"><div><span class="eyebrow">التقييم الذكي التجريبي</span><h3 id="assessmentLevel">لا توجد بيانات كافية</h3></div><div class="assessment-score"><b id="assessmentScore">0</b><small>/100</small></div></div><p id="assessmentSummary">ابدأ جلسات ليظهر التحليل.</p><div class="skills-two"><div><h4>مهارات جيدة</h4><div id="masteredSkills"></div></div><div><h4>تحتاج تحسينًا</h4><div id="weakSkills"></div></div></div></section>
     <section class="card"><div class="section-head"><div><span class="eyebrow">طرق التحسين</span><h3>توصيات حسب الأداء</h3></div></div><div id="recommendationsList"></div></section>
@@ -250,5 +254,9 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="app.js"></script>
+<script src="features.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
 </body>
 </html>
+
